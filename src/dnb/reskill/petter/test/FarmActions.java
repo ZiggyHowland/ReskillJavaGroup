@@ -1,4 +1,4 @@
-package test;
+package dnb.reskill.petter.test;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,6 +28,7 @@ public class FarmActions {
 
         System.out.println("Age: ");
         int age = scanner.nextInt();
+        scanner.nextLine();
 
         //Why does this add
         animalList.add(new Animal(id, name, color, animalType, age)); //I can't see anything wrong here

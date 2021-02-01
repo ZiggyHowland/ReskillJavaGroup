@@ -1,4 +1,4 @@
-package test;
+package dnb.reskill.petter.test;
 
 import java.util.Scanner;
 

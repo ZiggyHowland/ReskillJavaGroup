@@ -1,7 +1,7 @@
-package test;
+package dnb.reskill.petter.test;
 
 public class Animal {
-    private static int id;
+    private int id;
     private String name;
     private String color;
     private String animalType;
