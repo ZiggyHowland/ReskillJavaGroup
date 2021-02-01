@@ -25,14 +25,14 @@ Create a new GIT branch to avoid doing changes directly to main.\
 ``git branch [yourBranchName]`` - Create the branch\
 ``git checkout [yourBranchName]`` - Switch to the branch\
 OR\
-``git checkout -b [yourBranchName]`` - Create and switch to the new branch\
+``git checkout -b [yourBranchName]`` - Create and switch to the new branch
 
 ### Write or change some code
 Create a new file in your package in IntelliJ. Copy or write some code, and verify it works.
 
 ### Add your changes to GIT and commit the changes
 ``git add -A`` - Add your new file and/or changes to existing file to git staging\
-``git commit`` - Commits the changes to your branch\
+``git commit`` - Commits the changes to your branch
 
 ### Switch to the main branch and merge your changes into main
 ``git checkout main`` - Switch back to the main branch\
@@ -43,7 +43,7 @@ Now the code is merged into main on your local GIT repository. To make it availa
 ### Pull and push
 It's always good practice to pull last changes from GitHub both before creating a new branch, and before pushing your changes to the server. This forces you to deal with file conflicts locally (which is good).\
 ``git pull`` - Downloads the latest changes from the GitHub remote repository (this project only)\
-``git push`` - Uploads your changes and make them available for the rest of the Java group.\
+``git push`` - Uploads your changes and make them available for the rest of the Java group.
 
 ## Issues and problems
 In the perfect world all commands work as they should, always. You will face some trouble along the way. There is a lot of situations appearing in GIT, due to file conflicts, different branches, code versions and so on. Just keep smiling, google it, discuss with the rest of group and it will be solved in the end.
