@@ -1,7 +1,5 @@
 package test;
 
-import exercise__28_01_2021_Animal.Farm;
-
 import java.util.Scanner;
 
 public class UserInput {
