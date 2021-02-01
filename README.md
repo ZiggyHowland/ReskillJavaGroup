@@ -11,7 +11,7 @@ All commands are ment to be written in the **Command line/terminal**.
 ## Initialize GIT
 ### Clone this repository to your local machine
 (Will create a folder "ReskillJavaGroup" in the location you're when running the clone command)
-''git clone https://github.com/ZiggyHowland/ReskillJavaGroup.git''
+``git clone https://github.com/ZiggyHowland/ReskillJavaGroup.git``
 
 ### Open project in IntelliJ
 Open project in IntelliJ and verify you can run the code in your package.
