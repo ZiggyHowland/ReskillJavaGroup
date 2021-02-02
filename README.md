@@ -50,11 +50,11 @@ It's always good practice (good habit) to pull last changes from GitHub both bef
 # Folder/Package structure
 The 'src' folder contains a package 'dnb.reskill' and then you'll find one package per student (ex. 'arild', 'knut', 'marina', etc...)\
 \
-The structure inside your package is free to do as you like it, but since we're having labs daily it could be reasonable to add one package per day or date.
-- src
- - dnb.reskill
-  - arild 
-   - day 11 (your daily code in here)
+The structure inside your package is free to do as you like it, but since we're having labs daily it could be reasonable to add one package per day or date.\
+\- src\
+-- dnb.reskill\
+--- arild \
+---- day 11 (your daily code in here)\
     
 # Issues and problems
 In the perfect world all commands work as they should, always. You will face some trouble along the way. There is a lot of situations appearing in GIT, due to file conflicts, different branches, code versions and so on. Just keep smiling, google it, discuss with the rest of group and it will be solved in the end.
