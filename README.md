@@ -36,7 +36,7 @@ Create a new file in your package in IntelliJ. Copy or write some code, and veri
 
 ### Switch to the main branch and merge your changes into main
 ``git checkout main`` - Switch back to the main branch\
-``git pull`` - Always pull updates before merging (good habit = good practice)
+``git pull`` - Always pull updates before merging (good habit = good practice)\
 ``git merge [yourBranchName]`` - Merge your updates into main\
 \
 Now the code is merged into main on your local GIT repository. To make it available for the rest of the group you need to push the changes to GitHub. 
