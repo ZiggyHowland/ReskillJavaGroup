@@ -21,7 +21,7 @@ Open project in IntelliJ and verify you can run the code in your package.
 
 ### Create branch
 Create a new GIT branch to avoid doing changes directly to main.\
-``git pull`` - Always pull updates before creating a branch (good practice) \
+``git pull`` - Always pull updates before creating a branch (good habit = good practice) \
 ``git branch [yourBranchName]`` - Create the branch\
 ``git checkout [yourBranchName]`` - Switch to the branch\
 OR\
@@ -36,12 +36,13 @@ Create a new file in your package in IntelliJ. Copy or write some code, and veri
 
 ### Switch to the main branch and merge your changes into main
 ``git checkout main`` - Switch back to the main branch\
+``git pull`` - Always pull updates before merging (good habit = good practice)
 ``git merge [yourBranchName]`` - Merge your updates into main\
 \
 Now the code is merged into main on your local GIT repository. To make it available for the rest of the group you need to push the changes to GitHub. 
 
 ### Pull and push
-It's always good practice to pull last changes from GitHub both before creating a new branch, and before pushing your changes to the server. This forces you to deal with file conflicts locally (which is good).\
+It's always good practice (good habit) to pull last changes from GitHub both before creating a new branch, and before pushing your changes to the server. This forces you to deal with file conflicts locally (which is good).\
 ``git pull`` - Downloads the latest changes from the GitHub remote repository (this project only)\
 ``git push`` - Uploads your changes and make them available for the rest of the Java group.
 
