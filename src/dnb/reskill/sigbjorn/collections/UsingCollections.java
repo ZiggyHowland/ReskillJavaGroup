@@ -50,12 +50,16 @@ public class UsingCollections {
 				option = Helper.getInt("\nEnter option => ");
 				
 				switch (option) {
-				
 					case 1:
 						team = Helper.getString("Enter team: ");
 						// TODO: Append team to list, and display success/failure message.
 						//       Display a success/failure message.
-						System.out.printf("Adding team '%s' status: %s\n", team, teams.add(team) ? "Added" : "Failure");
+						if (teams.add(team)) {
+							outputListStatus(teams, String.format("Team '%s' added successfully.", team));
+						}
+						else {
+							outputListStatus(teams, String.format("Failed adding team '%s' to your list", team));
+						}
 						break;
 
 					case 2:
@@ -66,13 +70,13 @@ public class UsingCollections {
 						//       Display a success/failure message.
 						try {
 							teams.add(index, team);
-							System.out.printf("Team '%s' is added to index %d of the list.", team, index);
-
-						} catch (IndexOutOfBoundsException e) {
-							System.out.printf("Sorry, your suggested index is out of range. The list has a range from 0 to %d\n", teams.size()-1);
-
-						} catch (Exception e) {
-							System.err.printf("Something unexpected happened." + e.getMessage());
+							outputListStatus(teams, String.format("Team '%s' is added to index %d of the list.\n", team, index));
+						}
+						catch (IndexOutOfBoundsException e) {
+							outputListStatus(teams, "Sorry, your suggested index is out of range");
+						}
+						catch (Exception e) {
+							System.err.printf("Something unexpected happened on add()." + e.getMessage());
 						}
 						break;
 						
@@ -81,18 +85,40 @@ public class UsingCollections {
 						index = Helper.getInt("Enter index: ");
 						// TODO: If index is within range, set team at specified index in list.
 						//       Display a success/failure message.
+						try {
+							teams.set(index, team);
+							outputListStatus(teams, "set() success at index " + index);
+						}
+						catch (IndexOutOfBoundsException e) {
+							outputListStatus(teams, "Sorry, your suggested index is out of range.");
+						}
+						catch (Exception e) {
+							System.err.printf("Something unexpected happened on set()." + e.getMessage());
+						}
 						break;
 					
 					case 4:
 						index = Helper.getInt("Enter index: ");
 						// TODO: If index is within range, remove team at specified index in list.
 						//       Display a success/failure message.
+						try {
+							teams.remove(index);
+							outputListStatus(teams, "Successfully removed item at index " + index);
+						}
+						catch (IndexOutOfBoundsException e) {
+							outputListStatus(teams, "Cannot remove item. Index out of bounds.");
+						}
+						catch (Exception e) {
+							System.err.println(e.getMessage());
+						}
+
 						break;
 						
 					case 5:
 						team = Helper.getString("Enter team: ");
 						// TODO: Remove team from list.
 						//       Display a success/failure message.
+						
 						break;
 						
 					case 6:
@@ -112,6 +138,20 @@ public class UsingCollections {
 			}
 					
 		} while (option != 7);
+	}
+
+
+	private static void outputListStatus(ArrayList<String> teams, String message) {
+		System.out.println(message);
+		outputListStatus(teams);
+	}
+
+	private static void outputListStatus(ArrayList<String> teams) {
+		System.out.printf("Your list now contains %d elements\n" +
+				"and has an index from 0 to %d. Your list:\n", teams.size(), teams.size()-1);
+		for ( String t : teams ) {
+			System.out.printf("%d: %s\n", teams.indexOf(t), t.toUpperCase());
+		}
 	}
 
 
