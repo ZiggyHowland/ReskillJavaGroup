@@ -7,7 +7,7 @@ Simple sharing of code, helping each other and also train using GIT.
 # Howto use
 *Feel free to update the guide below if you want to add more info, commands or comments along the way*
 
-All commands are ment to be written in the **Command line/terminal**.
+All commands are ment to be written in the **Command line/terminal**. A UI application like GitHub Desktop can also be used, or f.ex Tortoise GIT (https://tortoisegit.org/) which makes GIT commands available through right clicking folders in f.ex. the Windows UI.
 
 ## Initialize GIT
 ### Clone this repository to your local machine
