@@ -5,6 +5,7 @@ Shared repository and Java project for all students in the Java group.
 Simple sharing of code, helping each other and also train using GIT.
 
 # Howto use
+*Feel free to update the guide below if you want to add more info, commands or comments along the way*
 
 All commands are ment to be written in the **Command line/terminal**.
 
