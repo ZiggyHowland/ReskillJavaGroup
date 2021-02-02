@@ -111,18 +111,28 @@ public class UsingCollections {
 						catch (Exception e) {
 							System.err.println(e.getMessage());
 						}
-
 						break;
 						
 					case 5:
 						team = Helper.getString("Enter team: ");
 						// TODO: Remove team from list.
 						//       Display a success/failure message.
-						
+						index = teams.indexOf(team);
+						if (index >= 0) {
+							try {
+								// TODO: 02.02.2021 Make work with any combination of upper and lowercase
+								teams.remove(index);
+								outputListStatus(teams, String.format("Successfully removed '%s' from the list.", team));
+							}
+							catch (Exception e) {
+								System.err.println(e.getMessage());
+							}
+						}
 						break;
 						
 					case 6:
 						// TODO: Display all items in list.
+						outputListStatus(teams, "Here you go; this is your list:");
 						break;
 
 					case 7:
@@ -150,7 +160,7 @@ public class UsingCollections {
 		System.out.printf("Your list now contains %d elements\n" +
 				"and has an index from 0 to %d. Your list:\n", teams.size(), teams.size()-1);
 		for ( String t : teams ) {
-			System.out.printf("%d: %s\n", teams.indexOf(t), t.toUpperCase());
+			System.out.printf("%d: %s\n", teams.indexOf(t), t); //, t.toUpperCase());
 		}
 	}
 
