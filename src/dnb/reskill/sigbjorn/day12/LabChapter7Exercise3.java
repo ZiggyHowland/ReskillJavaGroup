@@ -16,6 +16,11 @@ public class LabChapter7Exercise3 {
     private static void regex() {
         // Avoid double backslashes???
         //private static final String TABLE_REGEX = Pattern.quote("${table}");
+
+        String s = "";
+
+
+
     }
 
 
