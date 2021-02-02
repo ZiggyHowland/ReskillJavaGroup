@@ -22,7 +22,9 @@ Open project in IntelliJ and verify you can run the code in your package.
 
 ### Create branch
 Create a new GIT branch to avoid doing changes directly to main.\
-``git pull`` - Always pull updates before creating a branch (good habit = good practice) \
+
+> ``git pull`` - Always pull updates before creating a branch (good habit = good practice) 
+
 ``git branch [yourBranchName]`` - Create the branch\
 ``git checkout [yourBranchName]`` - Switch to the branch\
 OR\
