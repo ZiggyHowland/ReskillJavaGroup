@@ -1,17 +1,19 @@
 package dnb.reskill.sigbjorn.collections;
 
 
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class UsingCollections {
 
 	public static void main(String[] args) {
 		
 		// Work with a list of Strings.
-		manageFootballTeams();
+		//manageFootballTeams(); // OK
 		
 		// Work with a LinkedList of Doubles.
-		// manageSalaries();
+		manageSalaries();
 		
 		// Work with a TreeMap of Employees.
 		// manageEmployees();
@@ -24,7 +26,7 @@ public class UsingCollections {
 		// TODO: Declare a list to hold football teams (i.e. Strings).
 		//       You can create either an ArrayList or a LinkedList.
 		ArrayList<String> teams = new ArrayList<>();
-
+		// TODO: (SH) if giving a char as input on index request, code run into an infinite loop
 		
 		// Miscellaneous helper variables.
 		String team;
@@ -120,7 +122,7 @@ public class UsingCollections {
 						index = teams.indexOf(team);
 						if (index >= 0) {
 							try {
-								// TODO: 02.02.2021 Make work with any combination of upper and lowercase
+								// TODO: (SH) 02.02.2021 Make work with any combination of upper and lowercase
 								teams.remove(index);
 								outputListStatus(teams, String.format("Successfully removed '%s' from the list.", team));
 							}
@@ -150,7 +152,6 @@ public class UsingCollections {
 		} while (option != 7);
 	}
 
-
 	private static void outputListStatus(ArrayList<String> teams, String message) {
 		System.out.println(message);
 		outputListStatus(teams);
@@ -169,6 +170,11 @@ public class UsingCollections {
 	public static void manageSalaries() {
 
 		// TODO: Declare a LinkedList to hold salaries (i.e. Doubles).
+		LinkedList<Double> salaries = new LinkedList<>(); // Must be Double (not double) since collections do not accept primitive types
+		// Initialize with a few salaries
+		salaries.add(350000.0);
+		salaries.add(420000.0);
+		salaries.add(510000.0);
 
 		
 		// Miscellaneous helper variables.
@@ -199,32 +205,47 @@ public class UsingCollections {
 						salary = Helper.getDouble("Enter salary: ");
 						// TODO: Push salary into linked list.
 						//       Display a success/failure message.
+						salaries.push(salary);
+						printLinkedListStatus(salaries, "Push successful"); // Exceptions will be caught by the catch
 						break;
 						
 					case 2:
 						// TODO: Pop salary off linked list.
 						//       Display a success/failure message.
+						Double popped = salaries.pop();
+						printLinkedListStatus(salaries, String.format("Top element, salary %.1f removed from stack.", popped) );
 						break;
 						
 					case 3:
 						salary = Helper.getDouble("Enter salary: ");
 						// TODO: Add salary at the start of the linked list.
 						//       Display a success/failure message.
+						salaries.addFirst(salary);
+						printLinkedListStatus(salaries, String.format("Salary %f added first in the list.", salary));
 						break;
 					
 					case 4:
 						salary = Helper.getDouble("Enter salary: ");
 						// TODO: Add salary at the end of the linked list.
 						//       Display a success/failure message.
+						salaries.addLast(salary);
+						printLinkedListStatus(salaries, String.format("Salary %f added to the end of the list.", salary));
 						break;
 						
 					case 5:
 						// TODO: If linked list isn't empty, peek at the first and last entries.
 						//       If linked list IS empty, display a suitable message.
+						if (!salaries.isEmpty()) {
+							printLinkedListStatus(salaries, String.format("%.1f is first entry of your list. %.1f is the last entry.", salaries.peek(), salaries.peekLast()));
+						}
+						else {
+							System.out.println("Your list is empty. Operation not accepted.");
+						}
 						break;
 						
 					case 6:
 						// TODO: Display all items in linked list.
+						printLinkedListStatus(salaries, "Your list right now. Enjoy!");
 						break;
 
 					case 7:
@@ -240,6 +261,12 @@ public class UsingCollections {
 			}
 					
 		} while (option != 7);
+	}
+
+
+	private static void printLinkedListStatus(LinkedList<Double> list, String header ) {
+		System.out.println(header);
+		System.out.println(list);
 	}
 
 
