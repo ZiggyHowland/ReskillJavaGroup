@@ -4,6 +4,7 @@ package dnb.reskill.sigbjorn.collections;
 import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.TreeMap;
 
 public class UsingCollections {
 
@@ -13,10 +14,10 @@ public class UsingCollections {
 		//manageFootballTeams(); // OK
 		
 		// Work with a LinkedList of Doubles.
-		manageSalaries();
+		//manageSalaries();
 		
 		// Work with a TreeMap of Employees.
-		// manageEmployees();
+		manageEmployees();
 	}
 
 	
@@ -165,7 +166,6 @@ public class UsingCollections {
 		}
 	}
 
-
 	// Work with a LinkedList of Doubles.
 	public static void manageSalaries() {
 
@@ -263,7 +263,6 @@ public class UsingCollections {
 		} while (option != 7);
 	}
 
-
 	private static void printLinkedListStatus(LinkedList<Double> list, String header ) {
 		System.out.println(header);
 		System.out.println(list);
@@ -274,6 +273,8 @@ public class UsingCollections {
 	public static void manageEmployees() {
 
 		// TODO: Declare a TreeMap to hold Employees (keyed by employee id).
+		TreeMap<String, Employee> employeeTreeMap = new TreeMap<>();
+
 
 		
 		// Miscellaneous helper variables.
@@ -305,31 +306,61 @@ public class UsingCollections {
 						emp = Employee.createEmployee();
 						// TODO: Put employee into map.
 						//       Display a success/failure message.
+						employeeTreeMap.put(emp.getId(), emp);
+						printTreeMapStatus(employeeTreeMap, "Success adding a new employee to map"); // Exceptions will be caught
 						break;
 						
 					case 2:
 						id  = Helper.getString("Enter id: ");
 						// TODO: Remove employee with specified id.
 						//       Display a success/failure message.
+						if (employeeTreeMap.containsKey(id)) {
+							emp = employeeTreeMap.remove(id);
+							printTreeMapStatus(employeeTreeMap, String.format("Success removing %s from map.", emp.toString()));
+						}
+						else {
+							printTreeMapStatus(employeeTreeMap, String.format("ID %s does not exist in map. Cannot be removed.", id));
+						}
 						break;
 						
 					case 3:
 						id = Helper.getString("Enter id: ");
 						// TODO: Display message indicating whether the map contains the specified id.
+						if (employeeTreeMap.containsKey(id)) {
+							printTreeMapStatus(employeeTreeMap, String.format("ID %s exist in map.", id));
+						}
+						else {
+							printTreeMapStatus(employeeTreeMap, String.format("ID %s does not exist in map.", id));
+						}
 						break;
 
 					case 4:
 						emp = Employee.createEmployee();
+						boolean add = false;
 						// TODO: Display message indicating whether the map contains an employee with the specified values.
+						if (employeeTreeMap.containsKey(emp.getId())) {
+							if (emp.equals(employeeTreeMap.get(emp.getId()))) {
+								printTreeMapStatus(employeeTreeMap, "Equal employee already exist.");
+								break;
+							}
+						}
+						printTreeMapStatus(employeeTreeMap, "No equal employee found in map.");
 						break;
 
 					case 5:
 						// TODO: If map isn't empty, display the key/value for the first entry and for the last entry.
 						//       If map IS empty, display a suitable message.
+						if (!employeeTreeMap.isEmpty()) {
+							printTreeMapStatus(employeeTreeMap, String.format("First entry: %s \nLast entry: %s", employeeTreeMap.firstEntry(), employeeTreeMap.lastEntry()));
+						}
+						else {
+							printTreeMapStatus(employeeTreeMap, "Map is empty. Operation not supported.");
+						}
 						break;
 
 					case 6:
 						// TODO: Display all employee objects (i.e. values) in map.
+						printTreeMapStatus(employeeTreeMap, "Enjoy the presence of your map.");
 						break;
 
 					case 7:
@@ -346,4 +377,11 @@ public class UsingCollections {
 					
 		} while (option != 7);
 	}
+
+	private static void printTreeMapStatus(TreeMap<String, Employee> map, String header ) {
+		System.out.println(header);
+		System.out.println(map);
+	}
+
+
 }
