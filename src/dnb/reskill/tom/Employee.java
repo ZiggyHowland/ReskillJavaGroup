@@ -1,22 +1,54 @@
-
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
-
 package dnb.reskill.tom;
 
+import java.util.Scanner;
+
 public class Employee {
-    private java.lang.String id;
-    private java.lang.String name;
+
+    // Instance variables.
+    private String id;
+    private String name;
     private double salary;
-    private static java.util.Scanner scanner;
 
-    public Employee() { /* compiled code */ }
+    // Static Scanner, for simple console I/O.
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static dnb.reskill.tom.Employee createEmployee() { /* compiled code */ }
+    // Simple factory method, to create an Employee object directly using console I/O.
+    public static Employee createEmployee() {
 
-    public java.lang.String getId() { /* compiled code */ }
+        Employee emp = new Employee();
 
-    public java.lang.String toString() { /* compiled code */ }
+        System.out.print("Employee id? " );
+        emp.id = scanner.next();
 
-    public boolean equals(java.lang.Object other) { /* compiled code */ }
+        System.out.print("Employee name: " );
+        emp.name = scanner.next();
+
+        System.out.print("Employee salary: " );
+        emp.salary = scanner.nextDouble();
+
+        return emp;
+    }
+
+    // Get the employee's ID.
+    public String getId() {
+        return id;
+    }
+
+    // Return a textual representation of employee's data.
+    @Override
+    public String toString() {
+        return String.format("[%s] %s, �%.2f", id, name, salary);
+    }
+
+    // Is this employee "equal to" another object?
+    @Override
+    public boolean equals(Object other) {
+
+        if (!(other instanceof Employee)) {
+            return false;
+        } else {
+            Employee otherEmp = (Employee)other;
+            return this.toString().equals(otherEmp.toString());
+        }
+    }
 }
