@@ -17,6 +17,8 @@ All commands are ment to be written in the **Command line/terminal**. A UI appli
 ### Open project in IntelliJ
 Open project in IntelliJ and verify you can run the code in your package.
 
+###Alternative method
+Open IntelliJ - new project from version control - choose GitHub 
 
 ## Using GIT to upload your code
 
