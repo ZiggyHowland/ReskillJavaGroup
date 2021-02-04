@@ -6,9 +6,9 @@ import java.util.Date;
 
 // Answer from Lab: Abstract because this class is not containing sufficient data and methods to be instanciated
 public abstract class LibraryItem {
-    private String itemCode;
-    private String title;
-    private Date dateBorrowed = null;
+    protected String itemCode;
+    protected String title;
+    protected Date dateBorrowed = null;
     private Member currentBorrower = null;
 
     public LibraryItem(String title, String code) {
@@ -76,10 +76,18 @@ public abstract class LibraryItem {
         }
     }
 
+    /**
+     *
+     * @return Return a string on DD.MM.YYYY format
+     */
+    public abstract String dateDueBack();
 
 
     @Override
     public String toString() {
-        return String.format("Title: '%s' (%s). %s.", this.title, this.itemCode, this.isBorrowed() ? "Borrowed" : "Available");
+        return String.format("Title: '%s' (%s). %s.",
+                this.title,
+                this.itemCode,
+                this.isBorrowed() ? String.format("Borrowed (Due: %s)", this.dateDueBack() ) : "Available");
     }
 }
