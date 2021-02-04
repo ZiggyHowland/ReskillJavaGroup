@@ -1,11 +1,5 @@
 <h4>
-Incomplete, but working tic tac toe game. 
-
-----
-Known issue that's not fixed yet:
-
-It's possible to overwrite previously selected fields. 
-
-
-
+Working tic tac toe game. 
+  
+  Some no longer used code (redundant) not cleaned up yet
 </h4>
