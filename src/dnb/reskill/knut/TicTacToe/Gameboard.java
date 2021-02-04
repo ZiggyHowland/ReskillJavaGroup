@@ -145,6 +145,12 @@ public class Gameboard {
             }
         }
 
+//check if draw
+        if (!gameMap.containsValue("_")){
+            return ("Draw");
+
+        }
+
 
         return null;
     }

@@ -65,15 +65,18 @@ public class Menu {
 
                     System.out.println(updateBoard);
                     if (updateBoard == ("Victory")) {
+                        System.out.printf("\nCongratulations %s! \nThree %s's in a row.\n", player, playerSymbol);
+                        menuLoop = false;
+                        break;
+                    }
+                    if (updateBoard == ("Draw")) {
                         menuLoop = false;
                         break;
                     }
                 }
                 i++;
             }
-
-
-            System.out.printf("\nCongratulations %s! \nThree %s's in a row.\nGAME OVER", player, playerSymbol);
+            System.out.println("\nGAME OVER");
             break;
 //no further menu options at this point
 
