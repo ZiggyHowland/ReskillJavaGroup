@@ -27,7 +27,9 @@ public class UsingCollections {
 		// TODO: Declare a list to hold football teams (i.e. Strings).
 		//       You can create either an ArrayList or a LinkedList.
 		ArrayList<String> teams = new ArrayList<>();
+		
 		// TODO: (SH) if giving a char as input on index request, code run into an infinite loop
+		// ANDY: Best approach is to just read a string from the user, then try to Integer.ParseInt() and catch any FormatExceptions inside your code.
 		
 		// Miscellaneous helper variables.
 		String team;
@@ -124,6 +126,8 @@ public class UsingCollections {
 						if (index >= 0) {
 							try {
 								// TODO: (SH) 02.02.2021 Make work with any combination of upper and lowercase
+								// ANDY: You would have to convert your string to lowercase (or uppercase) and compare each string in the arralist, also in lowercase (or uppercase)
+								//       Or store 2 copies of every string - the real value plus the lowercase (or uppercase) value. That's what I do in my website.
 								teams.remove(index);
 								outputListStatus(teams, String.format("Successfully removed '%s' from the list.", team));
 							}
@@ -339,6 +343,7 @@ public class UsingCollections {
 						boolean add = false;
 						// TODO: Display message indicating whether the map contains an employee with the specified values.
 						if (employeeTreeMap.containsKey(emp.getId())) {
+							// ANDY: You should encapsulate this test somehow in the Employee class. Too much for the client to do itself.
 							if (emp.equals(employeeTreeMap.get(emp.getId()))) {
 								printTreeMapStatus(employeeTreeMap, "Equal employee already exist.");
 								break;
