@@ -1,24 +1,25 @@
 # Reskill Java Group
 Shared repository and Java project for all students in the Java group. 
 
-# Intention of repository
+# Intention of shared repository
 Simple sharing of code, helping each other and also train using GIT.
 
 # Howto use
 *Feel free to update the guide below if you want to add more info, commands or comments along the way*
 
+## Initialize and use GIT from IntelliJ 
+This PDF gives you a howto on cloning, branching and merging changes in our shared GIT repo:
+https://github.com/ZiggyHowland/ReskillJavaGroup/blob/main/GitVsIntelliJ.pdf
+
+## Initialize and use GIT from commmand line
 All commands are ment to be written in the **Command line/terminal**. A UI application like GitHub Desktop (https://desktop.github.com/) can also be used, or f.ex Tortoise GIT (https://tortoisegit.org/) which makes GIT commands available through right clicking folders in f.ex. the Windows UI.
 
-## Initialize GIT
 ### Clone this repository to your local machine
 (Will create a folder "ReskillJavaGroup" in the location you're when running the clone command)\
 ``git clone https://github.com/ZiggyHowland/ReskillJavaGroup.git``
 
 ### Open project in IntelliJ
 Open project in IntelliJ and verify you can run the code in your package.
-
-###Alternative method
-Open IntelliJ - new project from version control - choose GitHub 
 
 ## Using GIT to upload your code
 
