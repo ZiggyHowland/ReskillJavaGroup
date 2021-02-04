@@ -1,10 +1,11 @@
-package src.dnb.reskill.knut.TicTacToe;
+package dnb.reskill.knut.TicTacToe;
 
 import java.util.HashMap;
 
 
-
 public class Gameboard {
+
+
 
 
     private HashMap<String, String> gameMap = new HashMap<>();
@@ -55,6 +56,19 @@ public class Gameboard {
         if (x != null) return x;
 
             return printBoardAsString();
+    }
+
+
+    public boolean checkIfInputIsValid(String input){
+        if (!getGameMap().containsKey(input)){
+            return false;
+        }
+        if ((gameMap.get(input).equals("X") || gameMap.get(input).equals("O"))){
+            return false;
+        }
+        else
+            return true;
+
     }
 
 
