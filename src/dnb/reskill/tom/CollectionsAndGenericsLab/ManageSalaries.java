@@ -1,8 +1,4 @@
-package dnb.reskill.tom;
-
-import com.sun.source.tree.Tree;
-import jdk.jshell.SourceCodeAnalysis;
-import jdk.jshell.spi.ExecutionControlProvider;
+package dnb.reskill.tom.CollectionsAndGenericsLab;
 
 import java.util.LinkedList;
 import java.util.TreeMap;
@@ -123,7 +119,7 @@ Now switch back to UsingCollections.java and locate the manageEmployees() method
 In main(), uncomment the call to manageEmployees(), and then run the application. Make sure all the options work as expected.
 */
         // Done: Declare a TreeMap to hold Employees (keyed by employee id).
-        TreeMap<String,Employee> myTreeMap = new TreeMap<String,Employee>();
+        TreeMap<String, Employee> myTreeMap = new TreeMap<String,Employee>();
 
 
 

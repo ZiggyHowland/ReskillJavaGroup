@@ -1,4 +1,4 @@
-package dnb.reskill.tom;
+package dnb.reskill.tom.CollectionsAndGenericsLab;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,8 +21,8 @@ public class RegexDemo {
         System.out.println(Pattern.matches("[\\d]{3}\\Dx?y?","188dy")); //test for a little more complex regex (true)*/
         System.out.println((Pattern.matches("[\\D]+[\\d]{3}$","hallaisiken132"))); // TRUE
         //repeatedFinds("","/hallo/hallaisiken132/hello");
-        //repeatedFinds("/hallo/hallaisiken132/hello", "[a-z]+\\d{3}");
-        replaceText("hello mum", "[a-z]+");
+        repeatedFinds("/hallo/hallaisiken132/hello", "[a-z]+\\d{3}");
+        //replaceText("hello mum", "[a-z]+");
         //usingStringMethods();
 
     }
@@ -44,6 +44,19 @@ public class RegexDemo {
             System.out.println("matching string " + matcher.group());
         }
     }
+
+    public static String findFormattedText(String stringToFind,String regex) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(stringToFind);
+        while (matcher.find()) {
+            return matcher.group();
+        }
+        return null;
+    }
+
+
+
+
 
     public static void replaceText (CharSequence inputSequence, String regex){
         Pattern p = Pattern.compile(regex);
