@@ -1,3 +1,5 @@
+package dnb.reskill.knut.TicTacToe;
+
 import java.util.Scanner;
 
 public class Main {
