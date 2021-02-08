@@ -1,4 +1,4 @@
-package dnb.reskill.sigbjorn;
+package src.dnb.reskill.sigbjorn;
 
 
 public class Main {

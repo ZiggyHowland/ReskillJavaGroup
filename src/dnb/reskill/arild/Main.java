@@ -1,4 +1,4 @@
-package dnb.reskill.arild;
+package src.dnb.reskill.arild;
 
 public class Main {
     public static void main(String[] args) {

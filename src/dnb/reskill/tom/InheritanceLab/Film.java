@@ -1,4 +1,4 @@
-package dnb.reskill.tom.InheritanceLab;
+package src.dnb.reskill.tom.InheritanceLab;
 
 
 import java.time.Duration;

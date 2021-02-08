@@ -1,4 +1,4 @@
-package dnb.reskill.svetlana.feb03_2021;
+package src.dnb.reskill.svetlana.feb03_2021;
 
 import java.util.Scanner;
 
