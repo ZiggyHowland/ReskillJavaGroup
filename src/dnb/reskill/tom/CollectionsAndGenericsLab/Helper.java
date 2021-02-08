@@ -1,4 +1,4 @@
-package src.dnb.reskill.tom.CollectionsAndGenericsLab;
+package dnb.reskill.tom.CollectionsAndGenericsLab;
 
 import java.util.ArrayList;
 import java.util.Scanner;
