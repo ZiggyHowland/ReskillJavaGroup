@@ -8,7 +8,7 @@ Simple sharing of code, helping each other and also train using GIT.
 *Feel free to update the guide below if you want to add more info, commands or comments along the way*
 
 ## Initialize and use GIT from IntelliJ 
-This PDF gives you a howto on cloning, branching and merging changes in our shared GIT repo:
+<img src='https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg' width='24'> This PDF gives you a howto on cloning, branching and merging changes in our shared GIT repo:
 https://github.com/ZiggyHowland/ReskillJavaGroup/blob/main/GitVsIntelliJ.pdf
 
 ## Initialize and use GIT from commmand line

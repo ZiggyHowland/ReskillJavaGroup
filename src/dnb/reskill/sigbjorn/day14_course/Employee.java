@@ -1,4 +1,4 @@
-package dnb.reskill.sigbjorn.day14_course;
+package src.dnb.reskill.sigbjorn.day14_course;
 
 import java.util.ArrayList;
 

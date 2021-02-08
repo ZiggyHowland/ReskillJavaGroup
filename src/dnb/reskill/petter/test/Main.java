@@ -1,4 +1,4 @@
-package dnb.reskill.petter.test;
+package src.dnb.reskill.petter.test;
 
 public class Main {
     public static void main(String[] args) {

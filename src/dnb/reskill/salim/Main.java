@@ -1,4 +1,4 @@
-package dnb.reskill.salim;
+package src.dnb.reskill.salim;
 
 public class Main {
     public static void main(String[] args) {

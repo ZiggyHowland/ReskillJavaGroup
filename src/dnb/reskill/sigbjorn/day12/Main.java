@@ -1,4 +1,4 @@
-package dnb.reskill.sigbjorn.day12;
+package src.dnb.reskill.sigbjorn.day12;
 
 
 

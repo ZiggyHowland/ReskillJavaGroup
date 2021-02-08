@@ -1,4 +1,4 @@
-package dnb.reskill.sigbjorn.chap8_collections;
+package src.dnb.reskill.sigbjorn.chap8_collections;
 
 
 import java.util.ArrayList;
