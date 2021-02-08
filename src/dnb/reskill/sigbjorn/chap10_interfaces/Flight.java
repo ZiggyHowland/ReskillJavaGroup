@@ -5,6 +5,7 @@ import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
+
 public abstract class Flight {
     private String flightCode;
     private String from;

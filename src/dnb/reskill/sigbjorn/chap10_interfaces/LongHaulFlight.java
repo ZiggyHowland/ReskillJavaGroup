@@ -1,7 +1,7 @@
 package dnb.reskill.sigbjorn.chap10_interfaces;
 
 import java.time.ZonedDateTime;
-import java.util.Date;
+
 
 public class LongHaulFlight extends Flight {
     private final int CHECKIN_INTERVAL_MINUTES = 120;
