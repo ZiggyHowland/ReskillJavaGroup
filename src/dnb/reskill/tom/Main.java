@@ -1,4 +1,4 @@
-package src.dnb.reskill.tom;
+package dnb.reskill.tom;
 
 public class Main {
     public static void main(String[] args) {

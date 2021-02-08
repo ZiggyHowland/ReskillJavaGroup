@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.day16_course;
+package dnb.reskill.sigbjorn.day16_course;
 
 import java.util.UUID;
 

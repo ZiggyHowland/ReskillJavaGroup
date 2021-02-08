@@ -1,4 +1,4 @@
-package src.dnb.reskill.petter;
+package dnb.reskill.petter;
 
 public class Main {
     public static void main(String[] args) {

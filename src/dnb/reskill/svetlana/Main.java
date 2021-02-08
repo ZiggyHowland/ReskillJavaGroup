@@ -1,4 +1,4 @@
-package src.dnb.reskill.svetlana;
+package dnb.reskill.svetlana;
 
 public class Main {
     public static void main(String[] args) {

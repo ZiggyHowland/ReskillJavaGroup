@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.day11;
+package dnb.reskill.sigbjorn.day11;
 
 import java.util.Calendar;
 import java.util.Formatter;

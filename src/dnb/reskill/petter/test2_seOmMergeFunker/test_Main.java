@@ -1,4 +1,4 @@
-package src.dnb.reskill.petter.test2_seOmMergeFunker;
+package dnb.reskill.petter.test2_seOmMergeFunker;
 
 public class test_Main {
     public static void main(String[] args) {

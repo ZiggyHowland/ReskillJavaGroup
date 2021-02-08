@@ -1,4 +1,4 @@
-package src.dnb.reskill.petter.test;
+package dnb.reskill.petter.test;
 
 public class Animal {
     private int id;
