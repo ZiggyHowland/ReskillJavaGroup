@@ -15,9 +15,6 @@ public class LabChapter7Exercise2 {
         //demoDateFormatting();
 
     }
-
-
-
     private static void formattingExercises() {
         StringBuilder sb = new StringBuilder(100);
         Formatter formatter = new Formatter(sb, new Locale("no")); // nno/nn = Nynorsk, nob/nb = Bokmål, // nor/no = Norsk

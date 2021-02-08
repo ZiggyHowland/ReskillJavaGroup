@@ -1,6 +1,5 @@
 package dnb.reskill;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -40,7 +39,7 @@ public class Main {
                 dnb.reskill.svetlana.Main.main(args);
                 break;
             case "tom":
-                dnb.reskill.tom.Main.main(args);
+                dnb.reskill.tom.CollectionsAndGenericsLab.Main.main(args);
                 break;
             default:
                 System.out.println("No matches. Bye bye!");
