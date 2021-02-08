@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.day12;
+package dnb.reskill.sigbjorn.day12;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

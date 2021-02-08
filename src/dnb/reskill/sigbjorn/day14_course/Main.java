@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.day14_course;
+package dnb.reskill.sigbjorn.day14_course;
 
 public class Main {
     public static void main(String[] args) {

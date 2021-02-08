@@ -1,4 +1,4 @@
-package src.dnb.reskill.svetlana.feb03_2021;
+package dnb.reskill.svetlana.feb03_2021;
 // Comment from Sigbjørn: You've probably uploaded the files to the repo manually, and I got a problem inside IntelliJ
 // due to two things which I've corrected:
 // 1: name of the package (2021-02-03 is not allowed as a package name)

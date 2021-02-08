@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.chap9_inheritance;
+package dnb.reskill.sigbjorn.chap9_inheritance;
 
 public class Member {
 

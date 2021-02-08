@@ -1,4 +1,4 @@
-package src.dnb.reskill.tom.InheritanceLab;
+package dnb.reskill.tom.InheritanceLab;
 
 import com.sun.jdi.request.StepRequest;
 
