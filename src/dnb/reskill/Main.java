@@ -1,4 +1,4 @@
-package src.dnb.reskill;
+package dnb.reskill;
 
 import java.util.Locale;
 import java.util.Scanner;

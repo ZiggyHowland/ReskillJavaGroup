@@ -1,4 +1,4 @@
-package src.dnb.reskill.marina;
+package dnb.reskill.marina;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.day12;
+package dnb.reskill.sigbjorn.day12;
 
 public class LabChapter8Exercise1 {
     public static void run() {

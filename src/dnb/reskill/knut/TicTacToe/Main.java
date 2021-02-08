@@ -1,4 +1,4 @@
-package src.dnb.reskill.knut.TicTacToe;
+package dnb.reskill.knut.TicTacToe;
 
 import java.util.Scanner;
 

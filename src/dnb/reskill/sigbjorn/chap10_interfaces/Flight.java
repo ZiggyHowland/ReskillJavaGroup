@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.chap10_interfaces;
+package dnb.reskill.sigbjorn.chap10_interfaces;
 
 import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;

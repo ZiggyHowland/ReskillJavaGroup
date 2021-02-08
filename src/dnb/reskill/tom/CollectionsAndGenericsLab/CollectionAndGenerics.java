@@ -1,4 +1,4 @@
-package src.dnb.reskill.tom.CollectionsAndGenericsLab;
+package dnb.reskill.tom.CollectionsAndGenericsLab;
 
 public class CollectionAndGenerics {
 

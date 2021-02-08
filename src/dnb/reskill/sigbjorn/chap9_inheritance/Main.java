@@ -1,4 +1,4 @@
-package src.dnb.reskill.sigbjorn.chap9_inheritance;
+package dnb.reskill.sigbjorn.chap9_inheritance;
 
 import java.util.ArrayList;
 import java.util.HashMap;
