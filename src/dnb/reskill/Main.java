@@ -1,6 +1,5 @@
-package src.dnb.reskill;
+package dnb.reskill;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -19,28 +18,28 @@ public class Main {
 
         switch (student) {
             case "arild":
-                src.dnb.reskill.arild.Main.main(args);
+                dnb.reskill.arild.Main.main(args);
                 break;
             case "knut":
-                src.dnb.reskill.knut.Main.main(args);
+                dnb.reskill.knut.Main.main(args);
                 break;
             case "marina":
-                src.dnb.reskill.marina.Main.main(args);
+                dnb.reskill.marina.Main.main(args);
                 break;
             case "petter":
-                src.dnb.reskill.petter.Main.main(args);
+                dnb.reskill.petter.Main.main(args);
                 break;
             case "salim":
-                src.dnb.reskill.salim.Main.main(args);
+                dnb.reskill.salim.Main.main(args);
                 break;
             case "sigbjørn":
-                src.dnb.reskill.sigbjorn.Main.main(args);
+                dnb.reskill.sigbjorn.Main.main(args);
                 break;
             case "svetlana":
-                src.dnb.reskill.svetlana.Main.main(args);
+                dnb.reskill.svetlana.Main.main(args);
                 break;
             case "tom":
-                src.dnb.reskill.tom.Main.main(args);
+                dnb.reskill.tom.CollectionsAndGenericsLab.Main.main(args);
                 break;
             default:
                 System.out.println("No matches. Bye bye!");
