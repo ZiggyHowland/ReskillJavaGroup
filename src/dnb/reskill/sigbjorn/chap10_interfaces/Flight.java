@@ -42,6 +42,7 @@ public abstract class Flight {
                 .append(String.format("Flight %s ", this.flightCode))
                 .append(String.format("[%s -> %s] ", this.from, this.to))
                 .append(String.format("Departure: %s ", Helper.getHourMinutesFormatted(this.timeOfDeparture)))
+                .append(String.format("Check-in time: %s", this.getCheckInTime()))
                 .toString();
     }
 

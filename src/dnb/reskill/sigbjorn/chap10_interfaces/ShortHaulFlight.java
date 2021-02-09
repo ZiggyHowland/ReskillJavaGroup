@@ -18,13 +18,4 @@ public class ShortHaulFlight extends Flight {
     }
 
 
-    public String flightInfo() {
-        return new StringBuilder()
-                .append(super.flightInfo())
-                .append(String.format("Check-in time: %s", this.getCheckInTime()))
-                .toString();
-    }
-
-
-
 }
