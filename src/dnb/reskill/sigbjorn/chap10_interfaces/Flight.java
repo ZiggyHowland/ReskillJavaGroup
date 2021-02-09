@@ -1,18 +1,15 @@
 package dnb.reskill.sigbjorn.chap10_interfaces;
 
-import java.text.SimpleDateFormat;
-import java.time.ZonedDateTime;
-import java.util.Calendar;
-import java.util.Date;
+import lombok.ToString;
+import java.time.ZonedDateTime; // java.util.Date | Calendar | ++
 
-
+@ToString
 public abstract class Flight {
     private String flightCode;
     private String from;
     private String to;
     protected ZonedDateTime timeOfDeparture;
     private int flightDurationMinutes;
-
 
 
     public Flight(String flightCode, String from, String to, ZonedDateTime timeOfDeparture, int flightDurationMinutes) {
@@ -23,27 +20,29 @@ public abstract class Flight {
         this.flightDurationMinutes = flightDurationMinutes;
     }
 
-    public abstract String getCheckInTime();
-
-
-    protected static ZonedDateTime calculateCheckInTime(ZonedDateTime timeOfDeparture, int minutesPreDeparture) {
-        return timeOfDeparture.minusMinutes(minutesPreDeparture);
+    public String getCheckInTime() {
+        return Helper.getHourMinutesFormatted(calculateCheckInTime());
     }
+
+    protected ZonedDateTime calculateCheckInTime() {
+        return this.timeOfDeparture.minusMinutes(getPreMinutes());
+    }
+
+    public abstract int getPreMinutes(); // Must be implemented in the sub-classes
+
+
 
     public String getFlightCode() {
         return flightCode;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder()
-                .append(" { Flight code: " + this.flightCode)
-                .append(" | From: " + this.from)
-                .append(" | To: " + this.to)
-                .append(" | Time of departure: " + Helper.getHourMinutesFormatted(this.timeOfDeparture))
-                .append(" | Flight duration: " + this.flightDurationMinutes)
-                .append(" }");
-        return sb.toString();
+
+    public String flightInfo() {
+        return new StringBuilder()
+                .append(String.format("Flight %s ", this.flightCode))
+                .append(String.format("[%s -> %s] ", this.from, this.to))
+                .append(String.format("Departure: %s ", Helper.getHourMinutesFormatted(this.timeOfDeparture)))
+                .toString();
     }
 
 }
