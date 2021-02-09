@@ -13,6 +13,8 @@ public abstract class Flight {
     protected ZonedDateTime timeOfDeparture;
     private int flightDurationMinutes;
 
+
+
     public Flight(String flightCode, String from, String to, ZonedDateTime timeOfDeparture, int flightDurationMinutes) {
         this.flightCode = flightCode;
         this.from = from;
