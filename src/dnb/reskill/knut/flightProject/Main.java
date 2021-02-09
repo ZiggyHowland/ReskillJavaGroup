@@ -10,6 +10,9 @@ public class Main {
     FlightSchedule flightSchedule = new FlightSchedule();
 
 
+//    no input validation implementet yet
+//    no real time / date implementet yet
+
         System.out.println("Listing current flights:" + flightSchedule.listallFlightCodes());
 
         System.out.println("Enter flight code to view details: ");
