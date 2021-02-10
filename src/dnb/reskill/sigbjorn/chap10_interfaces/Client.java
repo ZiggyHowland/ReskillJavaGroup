@@ -10,7 +10,7 @@ public class Client {
         fs.printFlights();
 
         System.out.println("Search for WF666:");
-        System.out.println(fs.getFlightByFlightCode("WF666").toString());
+        System.out.println(fs.getFlightByFlightCode("WF666").toString()); // Lombok-created.
 
     }
 }

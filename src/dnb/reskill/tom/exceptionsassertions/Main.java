@@ -1,4 +1,4 @@
-package dnb.reskill.tom;
+package dnb.reskill.tom.exceptionsassertions;
 
 public class Main {
     public static void main(String[] args) {

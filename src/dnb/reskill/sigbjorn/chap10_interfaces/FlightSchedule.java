@@ -6,13 +6,13 @@ import java.util.HashMap;
 
 public class FlightSchedule {
     HashMap<String, Flight> flights = new HashMap<>();
-    ConsoleLogger logger;
+    Logger logger; // Dependency injection (changed through lesson). Use the interface, NOT the class implementing it (!)
 
-    public enum FlightType { LONG_HAUL, SHORT_HAUL };
+    //public enum FlightType { LONG_HAUL, SHORT_HAUL };
     // SH: Could this enum be placed in the Flight class? I tried but it created an error
     // SH It also seems awkward to create an enum when the sub-classes themselves could be used. But, is it ok and possible to use class Type as parameters?
 
-    public FlightSchedule(ConsoleLogger logger) {
+    public FlightSchedule(Logger logger) {
         this.logger = logger;
 
         // Initialize some flights
@@ -49,28 +49,32 @@ public class FlightSchedule {
 
     /**
      *
-     * @param flightType Enum parameter matching the sub-classes of Flight
-     * @return ArrayList of Flights of the matching type
+     * @param c The .class of any sub-class of Flight
+     * @return ArrayList of Flights matching the type given as param
      */
-    public ArrayList<Flight> getFlightsByFlightType(FlightType flightType) {
-        ArrayList<Flight> filteredList = new ArrayList<>();
+    public ArrayList<Flight> getFlightsByFlightType(Class c) {
+        // Class<?> c was used first, but Andy suggested only using Class c.
+        // Also investigated using Class<Flight> instead but did not work
 
+        ArrayList<Flight> filteredList = new ArrayList<>();
         for (Flight f : flights.values()) {
-            switch (flightType) {
-                case LONG_HAUL:
-                    if (f instanceof LongHaulFlight)
-                        filteredList.add(f);
-                    break;
-                case SHORT_HAUL:
-                    if (f instanceof ShortHaulFlight)
-                        filteredList.add(f);
-                    break;
-                default:
-                    // No action
+            if (c.isInstance(f)) {
+                filteredList.add(f);
             }
         }
         return filteredList;
     }
+
+    /**
+     *
+     * @param c The .class of any sub-class of Flight
+     * @return int giving the number of flights matching the type given as param
+     */
+    public int getNumberOfFlightsByFlightType(Class c) {
+        Collection<Flight> filteredList = this.getFlightsByFlightType(c);
+        return filteredList.size();
+    }
+
 
     /**
      *
@@ -80,38 +84,23 @@ public class FlightSchedule {
         return flights.size();
     }
 
-    /**
-     *
-     * @param flightType Enum parameter matching the sub-classes of Flight
-     * @return int with the number of flights matching the flight type
-     */
-    public int getNumberOfFlightsByFlightType(FlightType flightType) {
-        Collection<Flight> filteredList = this.getFlightsByFlightType(flightType);
-        return filteredList.size();
-    }
+
+
+
 
 
     public void printFlights() {
         this.logger.logStringMessage("List of all flights");
         for (Flight f : flights.values()) {
-            this.logger.logStringMessage(f.toString());
+            this.logger.logStringMessage(f.flightInfo());
         }
     }
 
     public void printFlightStatistics() {
         this.logger.logStringMessage(String.format("Total number of flights: %s", this.getNumberOfFlights()));
-        this.logger.logStringMessage(String.format("Number of short haul flights: %s", this.getNumberOfFlightsByFlightType(FlightType.SHORT_HAUL)));
-        this.logger.logStringMessage(String.format("Number of long haul flights: %s", this.getNumberOfFlightsByFlightType(FlightType.LONG_HAUL)));
+        this.logger.logStringMessage(String.format("Number of short haul flights: %s", this.getNumberOfFlightsByFlightType(ShortHaulFlight.class)));
+        this.logger.logStringMessage(String.format("Number of long haul flights: %s", this.getNumberOfFlightsByFlightType(LongHaulFlight.class)));
     }
 
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (Flight f : flights.values()) {
-            sb.append(f.toString() + "\n" );
-        }
-        return sb.toString();
-    }
 
 }

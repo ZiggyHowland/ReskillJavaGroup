@@ -1,6 +1,5 @@
 package dnb.reskill.sigbjorn.chap10_interfaces;
 
-import java.text.SimpleDateFormat;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -17,9 +16,8 @@ public class Helper {
     }
 
     public static String getHourMinutesFormatted(ZonedDateTime zdt) {
-        String pattern = CLOCK_FORMAT;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
-        return zdt.format(formatter).toString();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(CLOCK_FORMAT);
+        return zdt.format(formatter);
     }
 
 }
