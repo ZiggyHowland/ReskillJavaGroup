@@ -52,7 +52,8 @@ public class FlightSchedule {
      * @param c The .class of any sub-class of Flight
      * @return ArrayList of Flights matching the type given as param
      */
-    public ArrayList<Flight> getFlightsByFlightType(Class<?> c) {
+    public ArrayList<Flight> getFlightsByFlightType(Class<?> c) { // Also investigated using Class<Flight> instead but did not work
+
         ArrayList<Flight> filteredList = new ArrayList<>();
         for (Flight f : flights.values()) {
             if (c.isInstance(f)) {
