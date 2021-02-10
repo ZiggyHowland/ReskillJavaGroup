@@ -124,7 +124,7 @@ public class Gameboard {
         checkIfVictoryList.put(23, gameMap.get("b2"));
         checkIfVictoryList.put(24, gameMap.get("c1"));
 
-        String [] vicList = ()
+        //String [] vicList = ()
     }
 }
 
