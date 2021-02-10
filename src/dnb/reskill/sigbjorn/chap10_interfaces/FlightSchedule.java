@@ -52,7 +52,9 @@ public class FlightSchedule {
      * @param c The .class of any sub-class of Flight
      * @return ArrayList of Flights matching the type given as param
      */
-    public ArrayList<Flight> getFlightsByFlightType(Class<?> c) { // Also investigated using Class<Flight> instead but did not work
+    public ArrayList<Flight> getFlightsByFlightType(Class c) {
+        // Class<?> c was used first, but Andy suggested only using Class c.
+        // Also investigated using Class<Flight> instead but did not work
 
         ArrayList<Flight> filteredList = new ArrayList<>();
         for (Flight f : flights.values()) {
@@ -68,7 +70,7 @@ public class FlightSchedule {
      * @param c The .class of any sub-class of Flight
      * @return int giving the number of flights matching the type given as param
      */
-    public int getNumberOfFlightsByFlightType(Class<?> c) {
+    public int getNumberOfFlightsByFlightType(Class c) {
         Collection<Flight> filteredList = this.getFlightsByFlightType(c);
         return filteredList.size();
     }
