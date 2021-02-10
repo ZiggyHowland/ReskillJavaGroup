@@ -18,38 +18,47 @@ public class Company {
 	
 	
 	// Hire employee (i.e. add to company).
-	public void hireEmployee(Employee emp) {
+	public void hireEmployee(Employee emp) throws CompanyException {
 		
 		String id = emp.getId();
 		
 		// TODO: Enhance this code to throw a CompanyException 
-		//       if the company already has an employee with the specified id. 
+		//       if the company already has an employee with the specified id.
+		if(employees.containsKey(id)){
+			throw new CompanyException("Error id is allready in use  ID:" + id);
+		}
 		employees.put(id, emp);
 	}
 
 
 	// Fire employee (i.e. remove employee from company).
-	public void fireEmployee(String id) {
+	public void fireEmployee(String id) throws CompanyException {
 		
 		// TODO: Enhance this code to throw a CompanyException 
-		//       if the company doesn't contain an employee with the specified id. 
+		//       if the company doesn't contain an employee with the specified id.
+		if(!employees.containsKey(id)){
+			throw new CompanyException("Error id is NOT in use  ID:" + id);
+		}
 		employees.remove(id);
 	}
 
 
 	// Retire employee (but keep their info).
-	public void retireEmployee(String id) {
+	public void retireEmployee(String id) throws CompanyException {
 		
 		Employee emp = employees.get(id);
 		
 		// TODO: Enhance this code to throw a CompanyException 
-		//       if the company doesn't contain an employee with the specified id. 
+		//       if the company doesn't contain an employee with the specified id.
+		if(!employees.containsKey(id)){
+			throw new CompanyException("Error id is NOT in use  ID:" + id);
+		}
 		emp.retire();
 	}
 
 
 	// Give employee a pay rise.
-	public void giveEmployeePayRise(String id, double amount) {
+	public void giveEmployeePayRise(String id, double amount) throws RuntimeException {
 		
 		Employee emp = employees.get(id);
 		
@@ -58,9 +67,11 @@ public class Company {
 		// TODO: Also enhance this code to throw a CompanyException 
 		//       if the employee's payRise() method throws a low-level exception. 
 
-		try{emp.payRise(amount);}
+		try{
+			emp.payRise(amount);
+		}
 		catch (RuntimeException r){
-			System.out.println(r);
+			throw r;
 		}
 	}
 

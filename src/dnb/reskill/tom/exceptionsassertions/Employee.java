@@ -55,7 +55,7 @@ public class Employee {
 	}
 	
 	// Give the employee a pay rise.
-	public double payRise(double amount) {
+	public double payRise(double amount) throws RuntimeException{
 		
 		// Done: Throw an IllegalArgumentException if the amount is negative.
 

@@ -39,26 +39,45 @@ public class UsingCompany {
 			
 				case 1:
 					emp = Employee.createEmployee();
-					theCompany.hireEmployee(emp);
+					try {
+						theCompany.hireEmployee(emp);
+					}catch (CompanyException c){
+						System.out.println(c.toString());
+						break;
+					}
 					System.out.printf("Hired %s.\n", emp);
 					break;
 					
 				case 2:
 					id  = Helper.getString("Enter id: ");
-					theCompany.fireEmployee(id);
+					try {
+						theCompany.fireEmployee(id);
+					}catch (CompanyException c){
+						System.out.println(c.getMessage());
+						break;
+					}
 					System.out.printf("Fired employee with id %s.\n", id);
 					break;
 					
 				case 3:
 					id  = Helper.getString("Enter id: ");
-					theCompany.retireEmployee(id);
+					try {
+						theCompany.retireEmployee(id);
+					}catch (CompanyException c){
+						System.out.println(c.getMessage());
+					}
 					System.out.printf("Retired employee with id %s.\n", id);
 					break;
 
 				case 4:
 					id  = Helper.getString("Enter id: ");
 					amount = Helper.getDouble("Enter amount: ");
-					theCompany.giveEmployeePayRise(id, amount);
+					try {
+						theCompany.giveEmployeePayRise(id, amount);
+					}catch (Exception r){
+						System.out.println(r.getMessage());
+						break;
+					}
 					System.out.printf("Given %.2f pay rise to employee with id %s.\n", amount, id);
 					break;
 
