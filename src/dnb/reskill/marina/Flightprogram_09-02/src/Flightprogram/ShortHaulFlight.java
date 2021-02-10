@@ -1,16 +1,19 @@
 package Flightprogram;
 
+import java.time.ZonedDateTime;
+// import lombok.Data; --> Get error: No libraries found for lombok.Data
+
 public class ShortHaulFlight extends Flight {
 
+//    @Getter
     private final int CHECKIN_INTERVAL_MINUTES = 30;
 
-    public ShortHaulFlight(String flightCode, String fromTo, String departureTime, int flightDuration) {
+    public ShortHaulFlight(String flightCode, String fromTo, ZonedDateTime departureTime, int flightDuration) {
         super(flightCode, fromTo, departureTime, flightDuration);
     }
 
-    //To-do polymorphism "check-in-before". Need to fix departureTime...
-    public String checkInBefore () {
-        return "30 min før";
+    public int getCHECKIN_INTERVAL_MINUTES() {
+        return CHECKIN_INTERVAL_MINUTES;
     }
 
     @Override

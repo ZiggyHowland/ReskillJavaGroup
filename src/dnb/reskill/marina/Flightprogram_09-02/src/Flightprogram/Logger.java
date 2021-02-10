@@ -2,7 +2,6 @@ package Flightprogram;
 
 public interface Logger {
 
-    void logScheduleMessage ();
-    void nrOfShortHaulFlight();
+    void logMessage (String msg);
 
 }

@@ -3,14 +3,8 @@ package Flightprogram;
 public class ConsoleLogger implements Logger {
 
     @Override
-    public void logScheduleMessage() {
-        System.out.println("\nThis is the flight schedule:");
-        System.out.println("----------------------------");
+    public void logMessage(String msg) {
+        System.out.println(msg);
     }
 
-    @Override
-    public void nrOfShortHaulFlight() {
-        System.out.println("\nNumber of short haul flight(s):");
-        System.out.println("----------------------------------");
-    }
 }
