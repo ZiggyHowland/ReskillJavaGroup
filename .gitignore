@@ -16,6 +16,6 @@ hs_err_pid*
 out/
 .idea/
 .idea_modules/
-#*.iml # Try to keep project dependencies/classpath
+*.iml 
 *.ipr
 *.iws
