@@ -64,7 +64,6 @@ public class FlightSchedule {
         }
         return filteredList;
     }
-
     /**
      *
      * @param c The .class of any sub-class of Flight

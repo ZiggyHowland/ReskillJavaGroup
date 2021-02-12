@@ -36,7 +36,6 @@ public class RegistryTest {
         Student testStudentfromRegistry = testRegistry.findStudent(testStudentFromReturn.getStudentID());
         assertEquals(testStudentfromRegistry,testStudentFromReturn);
         }
-
     @Test
     @Ignore
     public void register_Student_that_does_Exist() {
@@ -59,14 +58,20 @@ public class RegistryTest {
         Student testStudentReturn = testRegistry.findStudent(studentIdDoesNotExist);
     }
     @Test
+    public void getRegistrySize(){
+        assertEquals(testRegistry.getStudentRegistrySize(),1);
+    }
+    @Test
     public void unregisterStudent_that_exists() {
-        testRegistry.unregisterStudent(studentId);
+        Student testStudent = testRegistry.findStudent(studentId);
+        UUID testStudentID = testStudent.getStudentID();
+        testRegistry.unregisterStudent(testStudentID);
+        assertEquals(testRegistry.getStudentRegistrySize(),0);
     }
     @Test(expected=IllegalArgumentException.class)
     public void unregisterStudent_that_does_not_exists() {
         testRegistry.unregisterStudent(UUID.randomUUID());
     }
-
 
     @Test
     public void getUniqueID(){

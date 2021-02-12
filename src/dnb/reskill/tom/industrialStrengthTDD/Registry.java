@@ -6,9 +6,6 @@ import java.util.UUID;
 public class Registry {
     HashMap<UUID,Student> studentRegistry = new HashMap<UUID,Student>();
     private UUID studentID;
-
-
-
     public Student registerStudent(String studentName){
 
         /*•	The Registry class should have a registerStudent() method,
@@ -35,18 +32,27 @@ public class Registry {
         /*•	The Registry class should have an unregisterStudent() method, which receives a student
         id as a parameter.
         The method should remove the Student object from the map if the id is found, or throw an exception otherwise.*/
+
         if(studentRegistry.containsKey(studentID)){
             studentRegistry.remove(studentID);
         }
-        throw new IllegalArgumentException("student ID does not exist");
-
+        else {
+            throw new IllegalArgumentException("student ID does not exist");
+        }
+    }
+    public int getStudentRegistrySize(){
+        return studentRegistry.size();
     }
     public UUID generateUniqueStudentID(){
         UUID uniqueID = UUID.randomUUID();
         return uniqueID;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Registry{" +
+                "studentRegistry=" + studentRegistry +
+                ", studentID=" + studentID +
+                '}';
+    }
 }
