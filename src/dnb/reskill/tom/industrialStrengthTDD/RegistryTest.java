@@ -39,7 +39,6 @@ public class RegistryTest {
     @Test
     @Ignore
     public void register_Student_that_does_Exist() {
-
         Student testStudentFromReturn = testRegistry.registerStudent(studentName);
         Student testStudent;
         Student testStudentfromRegistry = testRegistry.findStudent(testStudentFromReturn.getStudentID());

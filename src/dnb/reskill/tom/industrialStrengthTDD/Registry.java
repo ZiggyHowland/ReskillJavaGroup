@@ -39,6 +39,7 @@ public class Registry {
         else {
             throw new IllegalArgumentException("student ID does not exist");
         }
+
     }
     public int getStudentRegistrySize(){
         return studentRegistry.size();
